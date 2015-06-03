@@ -1,9 +1,8 @@
 keytar = require('../build/Release/keytar.node')
 
 module.exports =
-  getPassword: (service, account) ->
+  getPassword: (service, account = "") ->
     throw new Error("Service is required.") unless service?.length > 0
-    throw new Error("Account is required.") unless account?.length > 0
 
     keytar.getPassword(service, account)
 
